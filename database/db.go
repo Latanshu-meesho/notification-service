@@ -2,6 +2,7 @@ package database
 
 import (
 	"log"
+	"notification-service/config"
 	"notification-service/models"
 
 	"gorm.io/driver/mysql"
@@ -13,12 +14,12 @@ var DB *gorm.DB
 // InitDB initializes the database connection and performs migrations.
 func InitDB() {
 	// Build DSN (Data Source Name)
-	// dsn := config.AppConfig.DBUser + ":" +
-	// 	config.AppConfig.DBPassword + "@tcp(" +
-	// 	config.AppConfig.DBHost + ":" +
-	// 	config.AppConfig.DBPort + ")/" +
-	// 	config.AppConfig.DBName + "?charset=utf8mb4&parseTime=True&loc=Local"
-	dsn := "root:Lava1409@meesho@tcp(localhost:3306)/notification_service?charset=utf8mb4&parseTime=True&loc=Local"
+	dsn := config.AppConfig.DBUser + ":" +
+		config.AppConfig.DBPassword + "@tcp(" +
+		config.AppConfig.DBHost + ":" +
+		config.AppConfig.DBPort + ")/" +
+		config.AppConfig.DBName + "?charset=utf8mb4&parseTime=True&loc=Local"
+
 	// Open a connection to the database
 	var err error
 	DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
