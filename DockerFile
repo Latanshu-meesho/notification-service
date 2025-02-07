@@ -1,0 +1,22 @@
+# Start with the official Go image
+FROM golang:1.23
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the Go modules manifests
+COPY go.mod go.sum ./
+
+# Copy the entire project
+COPY . .
+
+# Set the working directory to the cmd folder where main.go is located
+WORKDIR /app/cmd
+
+RUN go build -o main .
+
+# Expose port (if applicable)
+EXPOSE 8080
+
+# Run the Go app
+CMD ["./main"]
