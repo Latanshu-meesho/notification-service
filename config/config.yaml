@@ -1,0 +1,8 @@
+DBHost: "localhost"
+DBPort: "3306"
+DBUser: "root"
+DBPassword: "your_password"
+DBName: "notification_service"
+RedisAddress: "localhost:6379"
+KafkaBrokers: "localhost:9092"
+ElasticSearchURL: "http://localhost:9200"

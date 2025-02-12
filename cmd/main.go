@@ -6,11 +6,16 @@ import (
 	"notification-service/database"
 	"notification-service/utils"
 
+	"notification-service/config"
+
 	"github.com/confluentinc/confluent-kafka-go/kafka"
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
+	// Load Config
+	config.LoadConfig()
+
 	// Initialize database
 	database.InitDB()
 	db := database.GetDB()
@@ -27,7 +32,7 @@ func main() {
 	}
 	defer producer.Close()
 
-	// starting kafka
+	// starting kafka locally
 	// kafka_2.13-3.9.0/bin/zookeeper-server-start.sh kafka_2.13-3.9.0/config/zookeeper.properties
 	// kafka_2.13-3.9.0/bin/kafka-server-start.sh kafka_2.13-3.9.0/config/server.properties
 
