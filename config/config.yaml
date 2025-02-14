@@ -1,7 +1,7 @@
 DBHost: "localhost"
 DBPort: "3306"
 DBUser: "root"
-DBPassword: "your_password"
+DBPassword: "YOUR_PASSWORD"
 DBName: "notification_service"
 RedisAddress: "localhost:6379"
 KafkaBrokers: "localhost:9092"

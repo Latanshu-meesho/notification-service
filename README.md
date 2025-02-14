@@ -2,6 +2,8 @@
 
 This is a Go-based microservice responsible for handling notifications. It consumes messages from Kafka, processes them, and integrates with a third-party SMS provider to send notifications.
 
+![Notification Service Architecture](image.png)
+
 ## Features
 - Kafka consumer for handling notification requests
 - Redis caching for blacklisted numbers
